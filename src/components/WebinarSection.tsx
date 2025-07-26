@@ -2,12 +2,47 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Users, Video } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const WebinarSection = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-r from-primary/10 via-background to-accent/10">
+    <motion.section 
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-r from-primary/10 via-background to-accent/10"
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          variants={itemVariants}
+        >
           {/* Header */}
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-cta text-cta-foreground">Free Webinar 🔥</Badge>
@@ -133,9 +168,9 @@ const WebinarSection = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
