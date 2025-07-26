@@ -1,0 +1,165 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Star, MapPin, Briefcase } from "lucide-react";
+import successImage from "@/assets/success-story.jpg";
+
+const SuccessStoriesSection = () => {
+  const stories = [
+    {
+      name: "Rohit Joshi",
+      location: "Bageshwar",
+      course: "Full Stack Developer",
+      job: "Web Developer at Dehradun Startup",
+      story: "Main Bageshwar se hoon. VOTS ne mujhe IT job tak pahunchaya. पहले कभी सोचा नहीं था कि coding कर सकूंगा।",
+      rating: 5,
+      salary: "₹25,000/month"
+    },
+    {
+      name: "Meena Rawat",
+      location: "Almora",
+      course: "Python Programming",
+      job: "Freelance Developer",
+      story: "Typing aur MS Office se start kiya. Ab website bana rahi hoon। अब मैं घर बैठे काम करती हूं।",
+      rating: 5,
+      salary: "₹30,000/month"
+    },
+    {
+      name: "Sandeep Bisht",
+      location: "Pithoragarh",
+      course: "PreBasic to Advance",
+      job: "Software Engineer Intern",
+      story: "Main 12th ke baad PreBasic kiya, phir Advance tak gaya. Ab Bangalore mein internship kar raha hoon।",
+      rating: 5,
+      salary: "₹20,000/month"
+    }
+  ];
+
+  return (
+    <section id="success" className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            🌟 Student Success Stories
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            हमारे students की real stories। आज वे कहां हैं और कैसे पहुंचे यहां तक।
+          </p>
+        </div>
+
+        {/* Featured Success Story */}
+        <div className="mb-16">
+          <Card className="overflow-hidden shadow-xl bg-gradient-to-r from-primary/5 to-accent/5">
+            <CardContent className="p-0">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-xl font-medium text-foreground mb-6">
+                    "बिना B.Tech के भी IT job mil सकती है। VOTS ने यह possible बनाया। 
+                    छोटी जगह से बड़े सपने पूरे हो सकते हैं।"
+                  </blockquote>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-lg text-foreground">Ravi Negi</h4>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>Bageshwar → Dehradun</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Briefcase className="w-4 h-4" />
+                        <span>Web Developer</span>
+                      </div>
+                    </div>
+                    <p className="text-cta font-semibold">Now Earning: ₹35,000/month</p>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <img 
+                    src={successImage} 
+                    alt="Success story" 
+                    className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* More Success Stories */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {stories.map((story, index) => (
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(story.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <blockquote className="text-foreground mb-4 text-sm leading-relaxed">
+                  "{story.story}"
+                </blockquote>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-foreground">{story.name}</h4>
+                  <div className="text-xs text-muted-foreground space-y-1">
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-3 h-3" />
+                      <span>{story.location}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Briefcase className="w-3 h-3" />
+                      <span>{story.job}</span>
+                    </div>
+                  </div>
+                  <p className="text-cta font-semibold text-sm">{story.salary}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary mb-2">1500+</div>
+            <div className="text-muted-foreground">Students Trained</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary mb-2">300+</div>
+            <div className="text-muted-foreground">Job Offers</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary mb-2">10+</div>
+            <div className="text-muted-foreground">Districts Covered</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-primary mb-2">₹25L+</div>
+            <div className="text-muted-foreground">Income Generated</div>
+          </div>
+        </div>
+
+        {/* Video Testimonials CTA */}
+        <div className="text-center bg-card/50 backdrop-blur-sm p-8 rounded-2xl">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Want to hear more success stories? 🎥
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            देखिए हमारे students के video testimonials और जानिए उनके complete journey।
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="cta" size="lg">
+              🎬 Watch Video Stories
+            </Button>
+            <Button variant="outline" size="lg">
+              📝 Share Your Story
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SuccessStoriesSection;
