@@ -33,8 +33,8 @@ const FeatureCardsSection = () => {
     {
       icon: <Globe className="w-12 h-12" />,
       title: "Local Focus",
-      subtitle: "Built for pahadi youth",
-      description: "समझते हैं आपकी परेशानी, जानते हैं आपके सपने",
+      subtitle: "Built for hill region youth",
+      description: "Understanding your background, knowing your dreams",
       videoSrc: "https://cdn.pixabay.com/vimeo/452333/mountain-47837.mp4?width=1280&hash=b0d619fe51d8bb2b78c5fb2e5b65ca35c3a86e6b",
       gradient: "from-blue-500/20 via-green-500/20 to-blue-600/20"
     },
@@ -42,7 +42,7 @@ const FeatureCardsSection = () => {
       icon: <Smartphone className="w-12 h-12" />,
       title: "Learn from Phone",
       subtitle: "Start with just your phone",
-      description: "बस एक phone से शुरू करें अपना coding journey",
+      description: "Begin your coding journey with just a smartphone",
       videoSrc: "https://cdn.pixabay.com/vimeo/334886/smartphone-8474.mp4?width=1280&hash=7c8b5392ab8e6c6f3be5b6f13b3ea52cbf6b94bb",
       gradient: "from-purple-500/20 via-pink-500/20 to-purple-600/20"
     },
@@ -50,7 +50,7 @@ const FeatureCardsSection = () => {
       icon: <Settings className="w-12 h-12" />,
       title: "Job-Ready Skills",
       subtitle: "Python, Web, AI & more",
-      description: "Industry-ready skills जो सच में job दिलाते हैं",
+      description: "Industry-ready skills that actually get you jobs",
       videoSrc: "https://cdn.pixabay.com/vimeo/205059/coding-4141.mp4?width=1280&hash=86ba71fcc56e0f93cf8ba3d2d69a77c23b8fa863",
       gradient: "from-orange-500/20 via-red-500/20 to-orange-600/20"
     }
@@ -72,7 +72,7 @@ const FeatureCardsSection = () => {
             🚀 Your Journey Starts Here
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            हर कदम पर आपके साथ, हर सपने को हकीकत बनाने के लिए
+            Supporting you every step of the way, turning every dream into reality
           </p>
         </motion.div>
 

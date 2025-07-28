@@ -19,14 +19,14 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           <div className="mb-8">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              <span className="block">पहाड़ों से IT दुनिया तक</span>
+              <span className="block">From Mountains to IT World</span>
               <span className="block text-3xl md:text-4xl mt-2 text-white/90">
                 Learn Coding. Get a Job. From Bageshwar to the World.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
-              Start your tech journey with expert guidance in Hindi and English. 
-              No prior experience needed. छोटी शुरुआत से बड़ी मंजिल तक।
+              Start your tech journey with expert guidance in simple language. 
+              No prior experience needed. Small beginnings, big achievements.
             </p>
           </div>
 

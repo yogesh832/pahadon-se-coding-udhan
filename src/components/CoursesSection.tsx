@@ -38,7 +38,7 @@ const CoursesSection = () => {
       icon: "📘",
       title: "PreBasic Course",
       subtitle: "Computer Basics & Typing",
-      description: "Computer चलाना सीखें, Typing speed बढ़ाएं",
+      description: "Learn computer basics and improve typing speed",
       duration: "2 Months",
       fee: "₹3,000",
       mode: "Offline/Online",
@@ -50,7 +50,7 @@ const CoursesSection = () => {
       icon: "🔷",
       title: "Basic Programming",
       subtitle: "C, HTML, Python Foundation",
-      description: "Programming की शुरुआत आसान भाषा में",
+      description: "Start programming with easy-to-understand language",
       duration: "4 Months",
       fee: "₹8,000",
       mode: "Offline/Online",
@@ -74,7 +74,7 @@ const CoursesSection = () => {
       icon: "🐍",
       title: "Python Programming",
       subtitle: "Data Science & AI Basics",
-      description: "Python से AI/ML की दुनिया में कदम रखें",
+      description: "Step into the world of AI/ML with Python programming",
       duration: "5 Months",
       fee: "₹15,000",
       mode: "Offline/Online",
@@ -86,7 +86,7 @@ const CoursesSection = () => {
       icon: "☁️",
       title: "AWS Cloud Computing",
       subtitle: "Cloud Technology Course",
-      description: "Future technology में career बनाएं",
+      description: "Build your career in future technology",
       duration: "3 Months",
       fee: "₹18,000",
       mode: "Online",
@@ -113,7 +113,7 @@ const CoursesSection = () => {
             💡 Our Popular Courses
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Basic से Advanced तक, हर level का course है। आपके लिए कौन सा perfect है?
+            From Basic to Advanced, we have courses for every level. Which one is perfect for you?
           </p>
         </motion.div>
 
@@ -201,7 +201,7 @@ const CoursesSection = () => {
             Confused about which course to choose? 🤔
           </h3>
           <p className="text-muted-foreground mb-6">
-            Free career counseling session book करें। हमारे experts आपको सही course choose करने में help करेंगे।
+            Book a free career counseling session. Our experts will help you choose the right course for your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="lg">

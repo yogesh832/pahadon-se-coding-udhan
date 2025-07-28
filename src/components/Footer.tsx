@@ -18,8 +18,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              पहाड़ों से IT दुनिया तक - हमारा mission है हर student को coding सिखाना 
-              और उनके sapne pure करना।
+              From mountains to IT world - our mission is to teach coding to every student 
+              and help them achieve their dreams.
             </p>
             <div className="flex space-x-3">
               <Button size="sm" variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/20">

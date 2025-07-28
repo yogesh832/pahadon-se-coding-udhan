@@ -35,38 +35,38 @@ const WhyVOTSSection = () => {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Local + Industry Experts",
-      description: "स्थानीय समझ के साथ इंडस्ट्री एक्सपर्ट्स से सीखें",
-      detail: "Learn from trainers who understand your background"
+      description: "Learn from trainers who understand your background",
+      detail: "Expert instructors with local understanding and industry experience"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Placement Assistance",
-      description: "Job की गारंटी के साथ Interview preparation",
-      detail: "Complete job support from resume to interview"
+      description: "Job guarantee with complete interview preparation",
+      detail: "Complete job support from resume building to interview cracking"
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Hindi + English",
-      description: "आसान भाषा में coding सीखें",
-      detail: "Learn in the language you're comfortable with"
+      title: "Simple Language",
+      description: "Learn coding in easy, understandable language",
+      detail: "Learn in the language you're most comfortable with"
     },
     {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Affordable Fees",
-      description: "हर student के budget में courses",
-      detail: "EMI options available for all courses"
+      description: "Courses that fit every student's budget",
+      detail: "EMI options available for all courses with flexible payment"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Step-by-step Learning",
-      description: "बिना pressure के धीरे-धीरे सीखें",
-      detail: "No rush, learn at your own comfortable pace"
+      description: "Learn gradually without pressure at your own pace",
+      detail: "No rush, learn at your own comfortable speed with proper guidance"
     },
     {
       icon: <Check className="w-8 h-8" />,
       title: "Zero to Hero",
-      description: "Computer basics से Software Engineer तक",
-      detail: "Complete transformation journey"
+      description: "From computer basics to Software Engineer level",
+      detail: "Complete transformation journey from beginner to professional"
     }
   ];
 
@@ -86,7 +86,7 @@ const WhyVOTSSection = () => {
             🌟 Why Choose VOTS?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            क्यों VOTS आपके लिए सबसे बेहतर choice है? देखिए क्या खास है हमारे पास
+            Why VOTS is the best choice for you? See what makes us special
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ const WhyVOTSSection = () => {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <p className="text-lg text-muted-foreground mb-6">
-            Ready to start your coding journey? आज ही शुरू करें!
+            Ready to start your coding journey? Begin today and transform your future!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-semibold">

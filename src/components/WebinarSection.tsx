@@ -50,7 +50,7 @@ const WebinarSection = () => {
               📅 Upcoming Free Webinar
             </h2>
             <p className="text-lg text-muted-foreground">
-              Career guidance session - बिल्कुल free! अपने doubts clear करें।
+              Career guidance session - absolutely free! Clear all your doubts.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ const WebinarSection = () => {
                         "Career in IT without Engineering Degree"
                       </h3>
                       <p className="text-muted-foreground">
-                        बिना engineering की भी IT में career कैसे बनाएं? सब कुछ detail में जानें।
+                        How to build a career in IT without an engineering degree? Learn everything in detail.
                       </p>
                     </div>
 
@@ -92,27 +92,27 @@ const WebinarSection = () => {
 
                     {/* What You'll Learn */}
                     <div>
-                      <h4 className="font-semibold text-foreground mb-3">क्या सीखेंगे इस session में:</h4>
+                      <h4 className="font-semibold text-foreground mb-3">What you'll learn in this session:</h4>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex items-center gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full"></span>
-                          IT field में कौन से opportunities हैं
+                          What opportunities exist in the IT field
                         </li>
                         <li className="flex items-center gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full"></span>
-                          कौन सा course आपके लिए बेहतर होगा
+                          Which course would be better for you
                         </li>
                         <li className="flex items-center gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full"></span>
-                          Job market की current situation
+                          Current job market situation
                         </li>
                         <li className="flex items-center gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full"></span>
-                          Salary expectations और growth path
+                          Salary expectations and growth path
                         </li>
                         <li className="flex items-center gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full"></span>
-                          Free resources और learning tips
+                          Free resources and learning tips
                         </li>
                       </ul>
                     </div>
@@ -123,7 +123,7 @@ const WebinarSection = () => {
                         🎯 Register Now - FREE
                       </Button>
                       <p className="text-xs text-muted-foreground text-center">
-                        Registration link आपके WhatsApp पर भेज दिया जाएगा
+                        Registration link will be sent to your WhatsApp
                       </p>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ const WebinarSection = () => {
           {/* Additional Info */}
           <div className="mt-8 text-center">
             <p className="text-muted-foreground mb-4">
-              Can't attend live? Don't worry! Recording भी मिल जाएगी registered students को।
+              Can't attend live? Don't worry! Recording will also be available to registered students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline">

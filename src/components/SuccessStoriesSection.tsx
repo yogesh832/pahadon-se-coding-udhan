@@ -39,7 +39,7 @@ const SuccessStoriesSection = () => {
       location: "Bageshwar",
       course: "Full Stack Developer",
       job: "Web Developer at Dehradun Startup",
-      story: "Main Bageshwar se hoon. VOTS ne mujhe IT job tak pahunchaya. पहले कभी सोचा नहीं था कि coding कर सकूंगा।",
+      story: "I'm from Bageshwar. VOTS helped me reach an IT job. Never thought I could do coding before.",
       rating: 5,
       salary: "₹25,000/month"
     },
@@ -48,7 +48,7 @@ const SuccessStoriesSection = () => {
       location: "Almora",
       course: "Python Programming",
       job: "Freelance Developer",
-      story: "Typing aur MS Office se start kiya. Ab website bana rahi hoon। अब मैं घर बैठे काम करती हूं।",
+      story: "Started with typing and MS Office. Now I'm building websites. I work from home now.",
       rating: 5,
       salary: "₹30,000/month"
     },
@@ -57,7 +57,7 @@ const SuccessStoriesSection = () => {
       location: "Pithoragarh",
       course: "PreBasic to Advance",
       job: "Software Engineer Intern",
-      story: "Main 12th ke baad PreBasic kiya, phir Advance tak gaya. Ab Bangalore mein internship kar raha hoon।",
+      story: "After 12th, I took PreBasic course, then went till Advanced. Now doing internship in Bangalore.",
       rating: 5,
       salary: "₹20,000/month"
     }
@@ -80,7 +80,7 @@ const SuccessStoriesSection = () => {
             🌟 Student Success Stories
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            हमारे students की real stories। आज वे कहां हैं और कैसे पहुंचे यहां तक।
+            Real stories of our students. Where they are today and how they reached there.
           </p>
         </motion.div>
 
@@ -99,8 +99,8 @@ const SuccessStoriesSection = () => {
                     ))}
                   </div>
                   <blockquote className="text-xl font-medium text-foreground mb-6">
-                    "बिना B.Tech के भी IT job mil सकती है। VOTS ने यह possible बनाया। 
-                    छोटी जगह से बड़े सपने पूरे हो सकते हैं।"
+                    "You can get IT jobs even without B.Tech. VOTS made this possible. 
+                    Dreams from small places can come true."
                   </blockquote>
                   <div className="space-y-2">
                     <h4 className="font-semibold text-lg text-foreground">Ravi Negi</h4>
@@ -198,7 +198,7 @@ const SuccessStoriesSection = () => {
             Want to hear more success stories? 🎥
           </h3>
           <p className="text-muted-foreground mb-6">
-            देखिए हमारे students के video testimonials और जानिए उनके complete journey।
+            Watch video testimonials of our students and learn about their complete journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="lg">
