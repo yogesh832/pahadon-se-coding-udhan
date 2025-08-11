@@ -1,220 +1,168 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Clock, Users, DollarSign, Award } from "lucide-react";
-import { motion } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Download, Clock } from "lucide-react";
 
-const CoursesSection = () => {
-  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+const courses = [
+  {
+    provider: "SkillEdge",
+    title: "Web Development for Beginners",
+    highlight: "Learn HTML, CSS & JavaScript basics",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    badge: "Popular",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "3 Months" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Basic Computer Skills",
+    highlight: "Master MS Office, Email & Internet",
+    image: "https://images.unsplash.com/photo-1581090700227-4c4f50b1d1d3?w=800&q=80",
+    badge: "Bestseller",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "1 Month" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Python Programming Basics",
+    highlight: "Start coding with Python 3",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "2 Months" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Digital Marketing Fundamentals",
+    highlight: "SEO, Social Media & Google Ads",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&q=80",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "1.5 Months" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Graphic Design with Canva",
+    highlight: "Create stunning designs easily",
+    image: "https://images.unsplash.com/photo-1504691342899-8d2d2d04b23d?w=800&q=80",
+    badge: "New",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "3 Weeks" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Java Basics for Beginners",
+    highlight: "Learn OOP concepts in Java",
+    image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&q=80",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "2 Months" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Cybersecurity Basics",
+    highlight: "Stay safe online & protect data",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "1 Month" },
+    ],
+  },
+  {
+    provider: "SkillEdge",
+    title: "Mobile App Development Basics",
+    highlight: "Build simple Android apps",
+    image: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?w=800&q=80",
+    badge: "Hot",
+    info: [
+      { icon: "certificate", label: "Certification" },
+      { icon: "clock", label: "2.5 Months" },
+    ],
+  },
+];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 40
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.7
-      }
-    },
-  };
-
-  const courses = [
-    {
-      icon: "📘",
-      title: "PreBasic Course",
-      subtitle: "Computer Basics & Typing",
-      description: "Learn computer basics and improve typing speed",
-      duration: "2 Months",
-      fee: "₹3,000",
-      mode: "Offline/Online",
-      level: "Beginner",
-      skills: ["Computer Basics", "MS Office", "Typing Speed", "Internet"],
-      popular: false
-    },
-    {
-      icon: "🔷",
-      title: "Basic Programming",
-      subtitle: "C, HTML, Python Foundation",
-      description: "Start programming with easy-to-understand language",
-      duration: "4 Months",
-      fee: "₹8,000",
-      mode: "Offline/Online",
-      level: "Beginner",
-      skills: ["C Programming", "HTML/CSS", "Python Basics", "Logic Building"],
-      popular: false
-    },
-    {
-      icon: "🚀",
-      title: "Advance with Job",
-      subtitle: "Full Stack Developer Course",
-      description: "Complete web development with job guarantee",
-      duration: "6 Months",
-      fee: "₹22,000",
-      mode: "Offline/Online",
-      level: "Advanced",
-      skills: ["React", "Node.js", "MongoDB", "AWS", "Job Support"],
-      popular: true
-    },
-    {
-      icon: "🐍",
-      title: "Python Programming",
-      subtitle: "Data Science & AI Basics",
-      description: "Step into the world of AI/ML with Python programming",
-      duration: "5 Months",
-      fee: "₹15,000",
-      mode: "Offline/Online",
-      level: "Intermediate",
-      skills: ["Python Advanced", "Data Analysis", "AI Basics", "Libraries"],
-      popular: false
-    },
-    {
-      icon: "☁️",
-      title: "AWS Cloud Computing",
-      subtitle: "Cloud Technology Course",
-      description: "Build your career in future technology",
-      duration: "3 Months",
-      fee: "₹18,000",
-      mode: "Online",
-      level: "Intermediate",
-      skills: ["AWS Services", "Cloud Deployment", "DevOps", "Certification"],
-      popular: false
-    }
-  ];
-
+export default function CoursesSection() {
   return (
-    <motion.section 
-      ref={sectionRef}
-      id="courses" 
-      className="py-20 bg-background"
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-    >
-      <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          variants={itemVariants}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            💡 Our Popular Courses
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From Basic to Advanced, we have courses for every level. Which one is perfect for you?
-          </p>
-        </motion.div>
+    <section className="py-12 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {courses.map((course, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col border border-gray-100"
+          >
+            {/* Image */}
+            <div className="relative">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-48 object-cover"
+              />
+              {course.badge && (
+                <span className="absolute top-4 right-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  {course.badge}
+                </span>
+              )}
+            </div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-        >
-          {courses.map((course, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className={`relative group hover:shadow-xl transition-all duration-300 h-full ${course.popular ? 'ring-2 ring-cta/20 shadow-lg' : ''}`}>
-                {course.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-cta text-cta-foreground">
-                    Most Popular 🔥
-                  </Badge>
-                )}
-                
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-3xl">{course.icon}</span>
-                    <div>
-                      <CardTitle className="text-xl text-foreground">{course.title}</CardTitle>
-                      <p className="text-sm text-primary font-medium">{course.subtitle}</p>
-                    </div>
+            {/* Content */}
+            <div className="flex-1 p-6 flex flex-col">
+              <span className="text-sm text-gray-500 font-medium">{course.provider}</span>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1 leading-snug">
+                {course.title}
+              </h3>
+              {course.highlight && (
+                <span className="inline-block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded mt-3">
+                  {course.highlight}
+                </span>
+              )}
+
+              {/* Info */}
+              <div className="flex items-center gap-6 mt-5 text-gray-600 text-sm">
+                {course.info.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    {item.icon === "certificate" ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-blue-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12h6m-3-3v6m8-6a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    ) : (
+                      <Clock size={16} className="text-blue-500" />
+                    )}
+                    {item.label}
                   </div>
-                  <p className="text-muted-foreground">{course.description}</p>
-                </CardHeader>
+                ))}
+              </div>
 
-                <CardContent className="space-y-4">
-                  {/* Course Details */}
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-primary" />
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <DollarSign className="w-4 h-4 text-primary" />
-                      <span className="font-semibold text-cta">{course.fee}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-primary" />
-                      <span>{course.mode}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Award className="w-4 h-4 text-primary" />
-                      <span>{course.level}</span>
-                    </div>
-                  </div>
-
-                  {/* Skills */}
-                  <div>
-                    <p className="text-sm font-medium text-foreground mb-2">What you'll learn:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {course.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex flex-col gap-2 pt-4">
-                    <Button 
-                      variant={course.popular ? "cta" : "default"} 
-                      className="w-full"
-                    >
-                      Learn More
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full">
-                      Download Syllabus
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div 
-          className="text-center mt-16 p-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl"
-          variants={itemVariants}
-        >
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Confused about which course to choose? 🤔
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Book a free career counseling session. Our experts will help you choose the right course for your goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="cta" size="lg">
-              📞 Book Free Counseling
-            </Button>
-            <Button variant="outline" size="lg">
-              💬 WhatsApp Us
-            </Button>
+              {/* Buttons */}
+              <div className="flex gap-3 mt-6">
+                <button className="flex-1 border border-gray-800 rounded-lg py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 transition">
+                  View Program
+                </button>
+                <button className="flex-1 bg-red-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-red-700 flex items-center justify-center gap-1 transition">
+                  <Download size={14} />
+                  Syllabus
+                </button>
+              </div>
+            </div>
           </div>
-        </motion.div>
+        ))}
       </div>
-    </motion.section>
+    </section>
   );
-};
-
-export default CoursesSection;
+}

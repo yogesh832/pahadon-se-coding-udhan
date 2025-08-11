@@ -1,72 +1,69 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Globe, Smartphone, Settings } from "lucide-react";
+import { Globe, Smartphone, Settings, ChevronRight, ChevronLeft } from "lucide-react";
+import { useState } from "react";
 
 const FeatureCardsSection = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 60,
-      scale: 0.9
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1
-    },
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const features = [
     {
-      icon: <Globe className="w-12 h-12" />,
+      icon: <Globe className="w-12 h-12 text-white" />,
       title: "Local Focus",
       subtitle: "Built for hill region youth",
       description: "Understanding your background, knowing your dreams",
-      videoSrc: "https://cdn.pixabay.com/vimeo/452333/mountain-47837.mp4?width=1280&hash=b0d619fe51d8bb2b78c5fb2e5b65ca35c3a86e6b",
-      gradient: "from-blue-500/20 via-green-500/20 to-blue-600/20"
+      imgSrc: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      gradient: "from-blue-600/60 via-green-500/40 to-blue-700/60",
     },
     {
-      icon: <Smartphone className="w-12 h-12" />,
+      icon: <Smartphone className="w-12 h-12 text-white" />,
       title: "Learn from Phone",
       subtitle: "Start with just your phone",
       description: "Begin your coding journey with just a smartphone",
-      videoSrc: "https://cdn.pixabay.com/vimeo/334886/smartphone-8474.mp4?width=1280&hash=7c8b5392ab8e6c6f3be5b6f13b3ea52cbf6b94bb",
-      gradient: "from-purple-500/20 via-pink-500/20 to-purple-600/20"
+      imgSrc: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      gradient: "from-purple-600/60 via-pink-500/40 to-purple-700/60",
     },
     {
-      icon: <Settings className="w-12 h-12" />,
+      icon: <Settings className="w-12 h-12 text-white" />,
       title: "Job-Ready Skills",
       subtitle: "Python, Web, AI & more",
       description: "Industry-ready skills that actually get you jobs",
-      videoSrc: "https://cdn.pixabay.com/vimeo/205059/coding-4141.mp4?width=1280&hash=86ba71fcc56e0f93cf8ba3d2d69a77c23b8fa863",
-      gradient: "from-orange-500/20 via-red-500/20 to-orange-600/20"
-    }
+      imgSrc: "https://images.unsplash.com/photo-1657727534676-cac1bb160d64?q=80&w=404&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      gradient: "from-orange-600/60 via-red-500/40 to-orange-700/60",
+    },
+    {
+      icon: <Settings className="w-12 h-12 text-white" />,
+      title: "Extra Skill",
+      subtitle: "Cloud & DevOps",
+      description: "Learn tools that power the tech industry",
+      imgSrc: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+      gradient: "from-teal-600/60 via-blue-500/40 to-teal-700/60",
+    },
   ];
 
+const nextSlide = () => {
+  setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+};
+
+const prevSlide = () => {
+  setCurrentIndex((prevIndex) =>
+    (prevIndex - 1 + features.length) % features.length
+  );
+};
+
+
+
   return (
-    <motion.section 
+    <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-background to-muted/30 overflow-hidden"
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
+      className="relative py-16 bg-gradient-to-b from-background to-muted/30"
     >
-      <div className="container mx-auto px-4">
-        <motion.div 
+      <div className="container mx-auto px-6">
+        {/* Section Title */}
+      <motion.div 
           className="text-center mb-16"
-          variants={cardVariants}
+          // variants={claardVariants}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             🚀 Your Journey Starts Here
@@ -75,82 +72,68 @@ const FeatureCardsSection = () => {
             Supporting you every step of the way, turning every dream into reality
           </p>
         </motion.div>
+        {/* Cards Container */}
+        <div className="relative flex items-center">
+          {/* Prev Button */}
+          <button
+            onClick={prevSlide}
+            className="absolute -left-4 z-20 bg-white shadow-lg rounded-full p-2 hover:scale-105 transition"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-          variants={containerVariants}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="group relative"
-            >
-              <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl bg-card border border-border/50 backdrop-blur-sm">
-                {/* Background Video */}
-                <div className="absolute inset-0 z-0">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                  >
-                    <source src={feature.videoSrc} type="video/mp4" />
-                  </video>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient}`} />
-                </div>
+          {/* Cards */}
+          <div className="overflow-hidden w-full">
+           <motion.div
+  className="flex gap-6 transition-transform duration-500"
+  style={{
+    transform: `translateX(-${currentIndex * 50}%)`, // Move in 50% steps
+  }}
+>
+  {features.map((feature, index) => (
+   <motion.div
+  key={index}
+  whileHover={{}} // no scale here so text doesn't grow
+  transition={{ duration: 0.4 }}
+  className="relative w-1/2 h-[80vh] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg group"
+>
+  {/* Background Image */}
+  <div className="absolute rounded-2xl inset-0">
+    <img
+      src={feature.imgSrc}
+      alt={feature.title}
+      className="w-full rounded-2xl h-[80vh] object-cover transition-transform duration-500 group-hover:scale-110"
+    />
+    {/* Gradient Overlay (Top to Bottom) */}
+    <div
+      className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+    />
+  </div>
 
-                {/* Content Overlay */}
-                <div className="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center">
-                  <motion.div 
-                    className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {feature.icon}
-                  </motion.div>
-                  
-                  <motion.h3 
-                    className="text-2xl font-bold text-foreground mb-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                  >
-                    {feature.title}
-                  </motion.h3>
-                  
-                  <motion.p 
-                    className="text-sm font-medium text-muted-foreground mb-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.4 }}
-                  >
-                    {feature.subtitle}
-                  </motion.p>
-                  
-                  <motion.p 
-                    className="text-sm text-foreground/80 leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.5 }}
-                  >
-                    {feature.description}
-                  </motion.p>
+  {/* Content */}
+  <div className="relative z-10 p-6 text-white flex flex-col justify-end h-full">
+    <div className="mb-4">{feature.icon}</div>
+    <h3 className="text-5xl font-bold">{feature.title}</h3>
+    <p className="text-2xl opacity-90">{feature.subtitle}</p>
+    <p className="text-xl opacity-80 mt-2">{feature.description}</p>
+  </div>
+</motion.div>
 
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
-                  <div className="absolute bottom-4 left-4 w-6 h-6 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300" />
-                </div>
+  ))}
+</motion.div>
 
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-5" />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={nextSlide}
+            className="absolute -right-4 z-20 bg-white shadow-lg rounded-full p-2 hover:scale-105 transition"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
