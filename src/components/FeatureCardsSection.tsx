@@ -95,7 +95,7 @@ const prevSlide = () => {
   key={index}
   whileHover={{}} // no scale here so text doesn't grow
   transition={{ duration: 0.4 }}
-  className="relative w-1/2 h-[80vh] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg group"
+  className="relative w-1/3 h-[80vh] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg group"
 >
   {/* Background Image */}
   <div className="absolute rounded-2xl inset-0">
